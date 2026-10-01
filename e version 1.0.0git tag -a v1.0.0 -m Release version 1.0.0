@@ -1,0 +1,17 @@
+[33mcommit 86b6138b9a06459ae6b1271623328549534126f0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;33mtag: [m[1;33mv1.0.0[m[33m)[m
+Author: Muhammad Sharif <steameracount2222@gmail.com>
+Date:   Thu Oct 1 18:40:03 2026 +0500
+
+    Made the backend project myself
+
+[33mcommit 0ca3bb6793f949d8ed317df77a7011fd3981af8b[m
+Author: Muhammad Sharif <steameracount2222@gmail.com>
+Date:   Fri Sep 25 19:35:45 2026 +0500
+
+    made separate routes for the en points in routes folder
+
+[33mcommit ff72298e423faf7b5a06d10921794ef24727ad9f[m
+Author: Muhammad Sharif <steameracount2222@gmail.com>
+Date:   Fri Sep 25 18:20:43 2026 +0500
+
+    Half of the project for node js is done
