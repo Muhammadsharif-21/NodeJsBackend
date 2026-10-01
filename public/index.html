@@ -175,20 +175,17 @@
     }
 
     async function authenticate() {
-        // access email and pass values
-        const emailVal = email.value
-        const passVal = password.value
+    // access email and pass values
+    const emailVal = email.value
+    const passVal = password.value
 
-        // guard clauses... if authenticating, return
-        if (
-            isLoading ||
-            isAuthenticating ||
-            !emailVal ||
-            !passVal ||
-            passVal.length < 6 ||
-            !emailVal.includes('@')
-        ) { return }
-
+    // guard clauses... if authenticating or inputs are empty, return
+    if (
+        isLoading ||
+        isAuthenticating ||
+        !emailVal ||
+        !passVal
+    ) { return }
         // reset error and set isAuthenticating to true
         error.style.display = 'none'
         isAuthenticating = true
@@ -249,15 +246,24 @@
     // CRUD LOGIC
 
     async function fetchTodos() {
-        isLoading = true
-        const response = await fetch(apiBase + 'todos', {
-            headers: { 'Authorization': token }
-        })
-        const todosData = await response.json()
-        todos = todosData
-        isLoading = false
-        renderTodos()
+    isLoading = true
+    const response = await fetch(apiBase + 'todos', {
+        headers: { 'Authorization': token }
+    })
+
+    // Add this check right here:
+    if (response.status === 401) {
+        localStorage.removeItem('token')
+        token = null
+        location.reload() // Reloads page back to Login screen
+        return
     }
+
+    const todosData = await response.json()
+    todos = todosData
+    isLoading = false
+    renderTodos()
+}
 
     async function updateTodo(index) {
         // set task complete status to true

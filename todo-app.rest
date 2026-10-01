@@ -1,0 +1,53 @@
+### GET
+
+GET http://127.0.0.1:5003
+
+### Register a user auth/register
+POST http://127.0.0.1:5003/auth/register
+Content-Type: application/json
+
+{
+    "username": "arii",
+    "password": "ira123"
+}
+
+
+### Login a user /auth/login
+POST http://127.0.0.1:5003/auth/login
+Content-Type: application/json
+
+{
+    "username": "arii",
+    "password": "ira123"
+}
+
+### Fetch all todos GET/TODOS
+get http://127.0.0.1:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzkwNDIwMzI5LCJleHAiOjE3OTA1MDY3Mjl9.kqW1j6rhhDMaIplIzRgIDGzwVd2JN662HTfVO9ZSzxc
+
+
+###
+POST http://127.0.0.1:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzkwNDIwMTE0LCJleHAiOjE3OTA1MDY1MTR9.AthIUapkfAyZ8zR1OL1DTqqwn5yqGYP0whB4-liST7g
+Content-Type: application/json
+
+ {
+    "task": "Done project 1!"
+ }
+
+
+### update 
+PUT http://127.0.0.1:5003/todos/2?
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzkwNDIwMTE0LCJleHAiOjE3OTA1MDY1MTR9.AthIUapkfAyZ8zR1OL1DTqqwn5yqGYP0whB4-liST7g
+
+{
+    "completed": 1
+ }
+
+###
+DELETE http://127.0.0.1:5003/todos/2?
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzkwNDIwMTE0LCJleHAiOjE3OTA1MDY1MTR9.AthIUapkfAyZ8zR1OL1DTqqwn5yqGYP0whB4-liST7g
+
+ {
+    "completed": 1
+ }

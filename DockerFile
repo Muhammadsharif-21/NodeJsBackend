@@ -1,0 +1,27 @@
+# Use an official node.js runtime as aparent image
+
+FROM node:22-alpine
+
+# Set the work dir in the container
+
+WORKDIR /app
+
+# Copy the pkg.json files to conatiner
+
+COPY package*.json .app
+
+# Install the dependencies
+RUN npm Install
+
+# Copy the rest of the app code
+COPY . .
+
+# Expose the port that app runs on
+
+EXPOSE 5003
+
+# Booting up the app 
+
+CMD ["node", "./src/server.js"]
+
+# 
